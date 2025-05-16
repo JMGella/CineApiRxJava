@@ -23,11 +23,11 @@
       </HBox>
       <TableView prefHeight="200.0" prefWidth="200.0">
         <columns>
-          <TableColumn prefWidth="152.0" text="Title" />
-          <TableColumn prefWidth="105.0" text="Genre" />
-            <TableColumn prefWidth="76.0" text="Duration" />
-            <TableColumn prefWidth="87.0" text="Release Date" />
-            <TableColumn prefWidth="84.0" text="Subtitled" />
+          <TableColumn fx:id="titleColumn" prefWidth="152.0" text="Title" />
+          <TableColumn fx:id="genreColumn" prefWidth="105.0" text="Genre" />
+            <TableColumn fx:id="durationColumn" prefWidth="76.0" text="Duration" />
+            <TableColumn fx:id="releaseDateColumn" prefWidth="87.0" text="Release Date" />
+            <TableColumn fx:id="subtitledColumn" prefWidth="84.0" text="Subtitled" />
         </columns>
       </TableView>
    </children>
