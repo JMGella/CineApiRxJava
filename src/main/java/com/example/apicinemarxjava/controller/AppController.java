@@ -2,13 +2,16 @@ package com.example.apicinemarxjava.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 
 public class AppController {
     @FXML
-    private Label welcomeText;
+    private TableView tableView;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    protected void getAllMovies(){
+
     }
+
+
 }
