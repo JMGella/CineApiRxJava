@@ -1,5 +1,6 @@
 package com.example.apicinemarxjava;
 
+import com.example.apicinemarxjava.model.Movie;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,9 +16,12 @@ public class App extends Application {
         stage.setTitle("ApiCinema!");
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void main(String[] args) {
         launch();
+
+
     }
 }

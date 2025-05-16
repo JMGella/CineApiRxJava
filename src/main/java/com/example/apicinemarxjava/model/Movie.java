@@ -2,18 +2,20 @@ package com.example.apicinemarxjava.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.Date;
+
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Movie {
 
-    long id;
-    String title;
-    String genre;
-    int durationMinutes;
-    LocalDate releaseDate;
-    boolean currentlyShowing;
+    private long id;
+    private String title;
+    private String genre;
+    private int durationMinutes;
+    private LocalDate releaseDate;
+    private boolean currentlyShowing;
 }

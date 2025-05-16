@@ -9,11 +9,11 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class Screening {
 
-    long id;
-    LocalDate screeningDate;
-    String theaterRoom;
-    double ticketPrice;
-    boolean subtitled;
-    long movie_id;
+    private long id;
+    private LocalDate screeningDate;
+    private String theaterRoom;
+    private double ticketPrice;
+    private boolean subtitled;
+    private long movie_id;
 
 }

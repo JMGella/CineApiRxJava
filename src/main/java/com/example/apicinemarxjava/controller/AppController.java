@@ -40,6 +40,7 @@ public class AppController {
         isShowingColumn.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().isCurrentlyShowing()));
 
         tbMovies.setItems(movieList);
+
         TaskManager task = new TaskManager(movieList);
          new Thread(task).start();
 

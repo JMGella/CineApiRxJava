@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiService {
 
- private String BASE_URL = "http://localhost:8080";
+ private String BASE_URL = "http://localhost:8080/";
  private ApiCinema apiCinema;
 
  public ApiService() {
