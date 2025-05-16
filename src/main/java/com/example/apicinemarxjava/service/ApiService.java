@@ -1,8 +1,8 @@
 package com.example.apicinemarxjava.service;
 
 
-import com.example.apicinemarxjava.model.Pelicula;
-import com.example.apicinemarxjava.model.Proyeccion;
+import com.example.apicinemarxjava.model.Movie;
+import com.example.apicinemarxjava.model.Screening;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory;
@@ -39,15 +39,15 @@ public class ApiService {
      this.apiCinema = retrofit.create(ApiCinema.class);
  }
 
- public Observable<Pelicula> getAllPeliculas() {
+ public Observable<Movie> getAllMovies() {
 
-     return apiCinema.getAllPeliculas()
-             .flatMapIterable(pelicula -> pelicula);
+     return apiCinema.getAllMovies()
+             .flatMapIterable(movie -> movie);
  }
 
- public Observable<Proyeccion> getAllProyecciones() {
-     return apiCinema.getAllProyecciones()
-             .flatMapIterable(proyeccion -> proyeccion);
+ public Observable<Screening> getAllScreenings() {
+     return apiCinema.getAllScreenings()
+             .flatMapIterable(screening -> screening);
  }
 
 
