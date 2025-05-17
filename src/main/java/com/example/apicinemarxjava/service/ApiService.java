@@ -20,7 +20,9 @@ import java.io.IOException;
 
 public class ApiService {
 
- private String BASE_URL = "http://127.0.0.1:8080/";
+// private String BASE_URL = "http://127.0.0.1:8080/";
+    private String BASE_URL = "http://18.208.152.159:8081"; //AWS EC2 IP Publica
+
  private ApiCinema apiCinema;
 
  public ApiService() throws IOException {
