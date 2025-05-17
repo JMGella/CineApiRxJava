@@ -15,7 +15,7 @@
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#getAllMovies" text="Movies">
+            <Button mnemonicParsing="false" onAction="#getAllMovies" text="Load Movies">
                <HBox.margin>
                   <Insets left="20.0" right="20.0" />
                </HBox.margin>
@@ -27,7 +27,7 @@
             </Text>
          </children>
       </HBox>
-      <TableView prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tbMovies" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="titleColumn" prefWidth="152.0" text="Title" />
           <TableColumn fx:id="genreColumn" prefWidth="105.0" text="Genre" />

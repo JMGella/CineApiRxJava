@@ -5,9 +5,9 @@ import com.example.apicinemarxjava.task.TaskManager;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -25,25 +25,36 @@ public class AppController {
     @FXML
     private TableColumn<Movie, Integer> durationColumn;
     @FXML
-    private TableColumn<Movie, LocalDate> releaseDateColumn;
+    private TableColumn<Movie, String> releaseDateColumn;
     @FXML
     private TableColumn<Movie, Boolean> isShowingColumn;
 
 
     @FXML
-    protected void getAllMovies(){
-
-        titleColumn.setCellValueFactory(cell-> new SimpleStringProperty(cell.getValue().getTitle()));
-        genreColumn.setCellValueFactory(cell-> new SimpleStringProperty(cell.getValue().getGenre()));
-        durationColumn.setCellValueFactory(cell -> new SimpleIntegerProperty(cell.getValue().getDurationMinutes()).asObject());
-        releaseDateColumn.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().getReleaseDate()));
-        isShowingColumn.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().isCurrentlyShowing()));
-
+    public void initialize() {
+        movieList = FXCollections.observableArrayList();
         tbMovies.setItems(movieList);
 
-        TaskManager task = new TaskManager(movieList);
-         new Thread(task).start();
+        titleColumn.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getTitle()));
+        genreColumn.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getGenre()));
+        durationColumn.setCellValueFactory(cell -> new SimpleIntegerProperty(cell.getValue().getDurationMinutes()).asObject());
+        releaseDateColumn.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getReleaseDate()));
+        isShowingColumn.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().isCurrentlyShowing()));
 
+
+    }
+
+    @FXML
+    protected void getAllMovies(){
+        try {
+            TaskManager task = new TaskManager(movieList);
+            task.setOnFailed(onFailed -> {task.getException().printStackTrace();});
+            new Thread(task).start();
+            System.out.println("Task started");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
